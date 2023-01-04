@@ -1,0 +1,19 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stage: Docker build.
+    displayName: Docker Build.
+    jobs:
+    - job: 
+      steps:
+        - task: Docker@2
+          inputs:
+            containerRegistry: 'DockerSP'
+            repository: 'abhi04d/dancingwhale'
+            command: 'buildAndPush'
+            Dockerfile: '**/Dockerfile'
+            tags: $(Build.BuildId)
