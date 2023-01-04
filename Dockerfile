@@ -6,4 +6,4 @@ RUN rm -f /usr/share/nginx/html/*
 
 EXPOSE 80
 
-ENTRYPOINT ["/usr/sbin/nginx", "-s", "reload"]
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
