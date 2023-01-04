@@ -1,2 +1,2 @@
 # Docker
-Hello, here I'm pasting my Docker file which I have used to create the image centos:apachev1.
+Hello, here I'm hosting my Dockerfile and other source files to create a Sample Webpage running on Docker container.
