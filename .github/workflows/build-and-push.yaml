@@ -9,7 +9,6 @@ on:
 
 env: 
   BUILD_TAG: ${{ github.run_id }}
-  IMAGE_NAME: abhi04d/ghActionWhale:${{ env.BUILD_TAG }}
 
 jobs:
   build:
@@ -24,6 +23,8 @@ jobs:
           username: abhi04d
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
       - name: Build and push
+        env: 
+          IMAGE_NAME: abhi04d/ghActionWhale:${{ env.BUILD_TAG }}
         run: |
           docker build -f ./Dockerfile --no-cache -t ${{ env.IMAGE_NAME }} .
           docker push ${{ env.IMAGE_NAME }}
