@@ -21,7 +21,7 @@ jobs:
           fetch-depth: 0
       - name: printing-envs
         run: |
-          echo "${{ TEST_PWD }}"
+          echo "${{ secrets.TEST_PWD }}"
           echo "${{ TEST_SERVICE }}"
           echo "${{ TEST_USER }}"
         
