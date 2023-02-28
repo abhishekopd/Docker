@@ -1,0 +1,27 @@
+name: printing-envs
+
+on:
+  push:
+    branches:
+      - 'main'
+      - 'dev'
+
+jobs:
+  checkingcode:
+    name: checking out.
+    runs-on: ubuntu-latest
+    environment: 
+      name: Test
+    steps:
+      - name: Checkout code.
+        uses: actions/checkout@v3
+        with:
+          # Full git history is needed to get a proper
+          # list of changed files within `super-linter`
+          fetch-depth: 0
+      - name: printing-envs
+        run: |
+          echo "${{ TEST_PWD }}"
+          echo "${{ TEST_SERVICE }}"
+          echo "${{ TEST_USER }}"
+        
