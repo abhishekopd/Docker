@@ -22,6 +22,5 @@ jobs:
       - name: printing-envs
         run: |
           echo "${{ secrets.TEST_PWD }}"
-          echo "${{ TEST_SERVICE }}"
-          echo "${{ TEST_USER }}"
+
         
